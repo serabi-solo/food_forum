@@ -16,8 +16,7 @@ img {
 .validationNotif {
   color: red;
 }
-<<<<<<< HEAD
-=======
+
 
 .container-restaurants {
   position: relative;
@@ -31,4 +30,3 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
->>>>>>> d8140b1cf8936e11f7cfea00fe64c946051cca26
