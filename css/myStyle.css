@@ -9,10 +9,26 @@ img {
   padding-right: 20px;
 }
 
-.container {
+.container-about {
   text-align: justify;
 }
 
 .validationNotif {
   color: red;
 }
+<<<<<<< HEAD
+=======
+
+.container-restaurants {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+>>>>>>> d8140b1cf8936e11f7cfea00fe64c946051cca26
