@@ -22,6 +22,10 @@
   <link href="css/clean-blog.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/myStyle.css">
 
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -72,37 +76,35 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview" id="post1">
-          <a href="post.html">
+        <div class="post-preview forum-post" id="post1">
             <div class="subject-bar">
-              <div class="a">
                 <h2 class="post-title">Coffee Shop </h2>
-              </div>
-              <div class="b">
-                <h2 class="post-title">Coffee Shop </h2>
-              </div>
+                <a href="#"><i class="fa fa-window-close-o del-button deleteButton"  style="font-size:24px;"></i></a>
             </div>
-            <h3 class="post-subtitle">
+            <a href="#">
+              <h3 class="post-subtitle">
                 Where is the coziest coffee shop to enjoy some coffee near Kemang?
               </h3>
-          </a>
+            </a>
           <p class="post-meta">Posted by
             <a href="#">Marsekal Hadi Tjahjanto</a> 09/04/2018</p>
+            <hr>
         </div>
-        <hr>
-        <div class="post-preview" id="post2">
-          <a href="post.html">
-            <h2 class="post-title">
-                Warkop
-              </h2>
-            <h3 class="post-subtitle">
-                There is a coffee shop called warkop there. I think it's a good place to enjoy some coffee.
+        <div class="post-preview forum-post" id="post2">
+            <div class="subject-bar">
+                <h2 class="post-title">Warkop </h2>
+                <a href="#"><i class="fa fa-window-close-o deleteButton" style="font-size:24px;"></i></a>
+            </div>
+            <a href="#">
+              <h3 class="post-subtitle">
+                There is a coffee shop called warkop there and I think it's a good place to enjoy some coffee.
               </h3>
-          </a>
+            </a>
           <p class="post-meta">Posted by
             <a href="#">Moeldoko</a> 09/04/2018</p>
+            <hr>
         </div>
-        <hr>
+
         <div id="posts">
      </div>
         <div class="container">
@@ -195,11 +197,11 @@
         </div>
       </div>
     </div>
+
+
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
