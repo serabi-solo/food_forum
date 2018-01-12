@@ -18,6 +18,18 @@ function getCurrentDate() {
   return today;
 }
 
+function generateNotifMessage(name, email, subject, message) {
+  if ((name === '') && (email === '') && (subject === '') && (message === '')) {
+    return "please fill all form section";
+  } else if (email.search("@") === -1) {
+    return "please write your email address properly";
+  } else if (email.search(".") === 0){
+    return "please write your email address properly";
+  } else {
+    return true;
+  }
+}
+
 $("#sendMessageButton").click(function(event) {
   event.preventDefault();
   var name = $("#name").val();
@@ -25,44 +37,50 @@ $("#sendMessageButton").click(function(event) {
   var subject = $("#subject").val();
   var message = $("#message").val();
   var today = getCurrentDate();
+  var notifMessage = generateNotifMessage(name, email, subject, message);
 
-  if(!isFormValid(name, email, subject, message)) {
-    return $(".validationNotif").html(" please fill all form section ");
+  if ((typeof notifMessage) === "string") {
+    return $(".validationNotif").html(notifMessage);
   }
 
+
   var newPost = `
-  <div class="post-preview" id="post2">
+  <div class="post-preview forum-post" id="post3">
       <div class="subject-bar">
           <h2 class="post-title">${subject} </h2>
-          <a href="#"><i class="fa fa-window-close-o" style="font-size:24px;"></i></a>
+          <a href=""><i class="fa fa-window-close-o deleteButton" id="deleteButton" onclick="return false;deletepost("post3",event); " style="font-size:24px;"></i></a>
       </div>
       <a href="#">
         <h3 class="post-subtitle">
-        ${message}
+          ${message}
         </h3>
       </a>
     <p class="post-meta">Posted by
-      <a href="#">${name}</a> ${today}</p>
+      <a href="#">${name}</a>${today}</p>
+      <hr>
   </div>
-  <hr>
+
   `;
 
   $('#name').val("");
   $('#email').val("");
   $('#subject').val("");
   $('#message').val("");
+  $("body").find(".validationNotif").html("");
   $("#posts").append(newPost).after();
 });
 
 $(".deleteButton").click(function(event) {
   event.preventDefault();
   var data = $(this).closest('.post-preview').attr('id');
-  data = "#"+data;
+  data = "#" + data;
   $(data).remove();
 });
 
-function isFormValid(name, email, subject, message) {
-  if( (name === '') && (email === '') && (subject === '') && (message === '') ) {
-    return false;
-  }
+function deletepost(postId,event) {
+  event.preventDefault();
+  postId = "#" + postId;
+  window.alert(event);
+  $(postId).remove();
+  return false;
 }
