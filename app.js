@@ -43,6 +43,7 @@ $("#sendMessageButton").click(function(event) {
 				`;
 
 	$("#posts").append(newPost).after();
+  $("#post1").remove();
 });
 
 //Unfix del button
