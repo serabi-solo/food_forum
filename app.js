@@ -18,7 +18,6 @@ function getCurrentDate() {
   return today;
 }
 
-
 $("#sendMessageButton").click(function(event) {
   event.preventDefault();
   var name = $("#name").val();
@@ -26,6 +25,11 @@ $("#sendMessageButton").click(function(event) {
   var subject = $("#subject").val();
   var message = $("#message").val();
   var today = getCurrentDate();
+
+  if(!isFormValid(name, email, subject, message)) {
+    return $(".validationNotif").html(" please fill all form section ");
+  }
+
   var newPost = `
   <div class="post-preview" id="post2">
       <div class="subject-bar">
@@ -41,7 +45,7 @@ $("#sendMessageButton").click(function(event) {
       <a href="#">${name}</a> ${today}</p>
   </div>
   <hr>
-      				`;
+  `;
 
   $('#name').val("");
   $('#email').val("");
@@ -51,9 +55,14 @@ $("#sendMessageButton").click(function(event) {
 });
 
 $(".deleteButton").click(function(event) {
-  const a =1;
   event.preventDefault();
   var data = $(this).closest('.post-preview').attr('id');
   data = "#"+data;
   $(data).remove();
 });
+
+function isFormValid(name, email, subject, message) {
+  if( (name === '') && (email === '') && (subject === '') && (message === '') ) {
+    return false;
+  }
+}
