@@ -9,7 +9,7 @@ img {
   margin-right: 20px;
 }
 
-.container {
+.container-about {
   text-align: justify;
 }
 
@@ -19,4 +19,17 @@ img {
 
 div h2 {
   margin-top: 100px;
+}
+
+.container-restaurants {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
