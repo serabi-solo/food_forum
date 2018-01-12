@@ -21,9 +21,11 @@ function getCurrentDate() {
 function generateNotifMessage(name, email, subject, message) {
   if ((name === '') && (email === '') && (subject === '') && (message === '')) {
     return "please fill all form section";
-  } else if (email.search("@") === -1) {
+  } else if (email.indexOf("@") === -1) {
     return "please write your email address properly";
-  } else if (email.search(".") === 0){
+  } else if (email.indexOf(".") === -1){
+    return "please write your email address properly";
+  } else if (email.indexOf("@.") !== -1){
     return "please write your email address properly";
   } else {
     return true;
@@ -43,7 +45,6 @@ $("#sendMessageButton").click(function(event) {
     return $(".validationNotif").html(notifMessage);
   }
 
-
   var newPost = `
   <div class="post-preview forum-post" id="post3">
       <div class="subject-bar">
@@ -59,7 +60,6 @@ $("#sendMessageButton").click(function(event) {
       <a href="#">${name}</a>${today}</p>
       <hr>
   </div>
-
   `;
 
   $('#name').val("");
